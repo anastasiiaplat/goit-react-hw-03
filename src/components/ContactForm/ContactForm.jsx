@@ -1,6 +1,7 @@
 
 
-const ContactForm = ({onAddUser}) => {
+const ContactForm = ({ onAddUser }) => {
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,7 +14,9 @@ const ContactForm = ({onAddUser}) => {
       userNumber
     }
 
-    onAddUser(formData)
+    onAddUser(formData);
+
+     
   };
 
 

@@ -17,8 +17,8 @@ function App() {
       ...formData,
       id: nanoid()
     };
-    setUsers([...users, finalUser]);
-  }
+    setUsers((prevState) => [...prevState, finalUser]);
+  };
 
   return (
     <div>
