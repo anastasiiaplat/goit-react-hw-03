@@ -6,15 +6,17 @@ const ContactForm = ({ onAddUser }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const userName = event.currentTarget.elements.userName.value;
-    const userNumber = event.currentTarget.elements.userNumber.value;
+    const name = event.currentTarget.elements.name.value;
+    const number = event.currentTarget.elements.number.value;
 
     const formData = {
-      userName,
-      userNumber
+      name,
+      number
     }
 
     onAddUser(formData);
+
+    event.currentTarget.reset();
 
      
   };
@@ -26,22 +28,22 @@ const ContactForm = ({ onAddUser }) => {
       <label>
         <span>Name</span>
         <br/>
-        <input type="text" name="userName"
+        <input type="text" name="name"
           placeholder="Name"
           required></input>
         <br/>
-      </label>
+      </label> {''}
       <label>
         <span>Number</span>
         <br />
         <input
           type="tel" 
-          name="userNumber" 
+          name="number" 
           placeholder="+370..." 
           required
         />
         <br />
-      </label>
+      </label> {''}
       <button type="submit">Add contact</button>
     </form>
   )

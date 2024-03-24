@@ -1,8 +1,16 @@
 
 
-const SearchBox = () => {
+const SearchBox = (filter, onChangeFilter) => {
   return (
-    <div>SearchBox</div>
+    <div>
+      <p>Find contacts by name</p>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={filter}
+        onChange={(event) => onChangeFilter(event)}
+      ></input>
+    </div>
   )
 }
 
