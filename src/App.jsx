@@ -41,13 +41,14 @@ function App() {
     setFilter(event.target.value)
   }
   
+  const filteredUsers = users.filter((user) => user.name.toLowerCase().includes(filter.toLowerCase()));
 
   return (
     <div>
   <h1>Phonebook</h1>
       <ContactForm onAddUser={onAddUser} />
       <SearchBox filter={filter} onChangeFilter={ onChangeFilter} />
-      <ContactList users={users} onDeleteUser={ onDeleteUser} />
+      <ContactList users={filteredUsers} onDeleteUser={ onDeleteUser} />
 </div>
 
   )
